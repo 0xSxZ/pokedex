@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from "./components/PokemonCard";
+import PropTypes from "prop-types";
+
 
 function App() {
   const pokemonList = [
@@ -16,6 +18,18 @@ function App() {
     },
   ];
 
+
+
+  // Defining prop types
+  PokemonCard.propTypes = {
+    pokemon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      imgSrc: PropTypes.string,
+    }).isRequired,
+  }
+
+
+  // Rendering page
   return (
     <div>
       <PokemonCard pokemon={pokemonList[0]}/>
