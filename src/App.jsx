@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -39,6 +39,13 @@ const pokemonList = [
 
 function App() {
 
+  useEffect(
+    () => {
+      alert("hello pokemon trainer :)");
+    },
+    []
+  );
+
   // Defining prop types
   PokemonCard.propTypes = {
     pokemon: PropTypes.shape({
@@ -50,6 +57,13 @@ function App() {
 
   //States
   let [pokemonIndex, setPokemonIndex] = useState(0);
+
+
+  // Miscellanous
+  if(pokemonList[pokemonIndex].name == "pikachu"){
+    alert("pika pikachu !!!")
+  }
+
 
 
   // Rendering page
